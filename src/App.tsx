@@ -1,6 +1,7 @@
 import * as React from "react";
 // import { useParams } from "react-router-dom";
 import Characters from "./components/characters"
+import Locations from "./components/locations"
 
 /**
  * @challenge - Find and solve any bugs you find in the project
@@ -15,8 +16,9 @@ export default function App() {
   return (
     <div className='bg-gray-100 dark:bg-gray-800 min-h-screen p-4 font-mono leading-tight'>
       <div className='container mx-auto w-4/5 my-10'>
-        <p className='text-gray-400'>Rick and Morty</p>
+        {/* <p className='text-gray-400'>Rick and Morty</p> */}
         <Characters />
+        <Locations />
       </div>
     </div>
   );

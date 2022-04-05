@@ -2,10 +2,10 @@ import * as React from "react";
 import { request, gql, GraphQLClient } from "graphql-request";
 import { getElementError } from "@testing-library/react";
 
-export default function Characters() {
+export default function Locations() {
   const [loading, setLoading] = React.useState(true);
-  const [characters, setCharacters] = React.useState<any>([]);
-  async function getCharacters() {
+  const [locations, setLocations] = React.useState<any>([]);
+  async function getLocations() {
     const endpoint = "https://rickandmortyapi.com/graphql";
     try {
       // const headers = { "Content-Type": "application/json" };
@@ -15,36 +15,39 @@ export default function Characters() {
       );
       const query = gql`
         {
-          characters {
+          locations {
             results {
+              id
               name
-              image
-              status
-              species
-              gender
-              origin {
+              type
+              dimension
+              residents {
                 name
-              }
-              location {
-                name
+                image
+                status
+                species
+                gender
+                origin {
+                  name
+                }
               }
             }
           }
         }
       `;
       const data = await graphQLClient.request(query);
-      setCharacters(data.characters.results);
+      setLocations(data.locations.results);
     } catch (err) {
       console.log(err);
     }
   }
   React.useEffect(() => {
-    getCharacters();
+    getLocations();
     setTimeout(() => {
       setLoading(false);
     }, 3000);
   }, []);
-  console.log(characters);
+  console.log(locations);
   return loading ? (
     <>
       <p className='text-gray-400 flex items-center'>
@@ -54,12 +57,12 @@ export default function Characters() {
           xmlns='http://www.w3.org/2000/svg'>
           <circle cx='50' cy='50' r='50' />
         </svg>
-        Loading Rick and Morty Characters using graphql-request...
+        Loading Rick and Morty locations using graphql-request...
       </p>
     </>
   ) : (
     <div className='grid grid-cols-2 gap-2'>
-      {characters.map((char: any, i: number) => (
+      {/* {locations.map((char: any, i: number) => (
         // <div>{char.name}</div>
         <div
           key={i}
@@ -80,7 +83,7 @@ export default function Characters() {
             </p>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
