@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import "./styles.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+// https://stackoverflow.com/questions/71668256/deprecation-notice-reactdom-render-is-no-longer-supported-in-react-18
 
 ReactDOM.render(
   <React.StrictMode>
