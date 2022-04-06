@@ -74,7 +74,9 @@ export default function LocationsPage() {
       <div>
         <span className='text-gray-400'>
           <>
-            <Link to='/'>Home</Link> | Residents of {locationName}
+            <Link to='/'>Home</Link> | Location: {locationName}{" "}
+            {location.type && `| Type: ${location.type} `}
+            {location.dimension && `| Dimension: ${location.dimension}`}
           </>
         </span>
       </div>{" "}

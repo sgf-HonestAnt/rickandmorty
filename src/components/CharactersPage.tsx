@@ -78,7 +78,7 @@ export default function CharactersPage() {
         <span className='text-gray-400'>
           {characterName ? (
             <>
-            <Link to='/'>Home</Link> | {characterName}
+            <Link to='/'>Home</Link> | Character: {characterName}
             </>
           ) : (
             <Pagination page={page} setPage={setPage} />
