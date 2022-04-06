@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export default function CharacterCard(props: { char: any }) {
   const { char } = props;
   return (
-    <div className='flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
+    <div className='flex flex-col items-center col-span-2 md:col-span-1 bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
       <img
-        className='object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
+        className='object-cover w-full h-48 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
         src={char.image}
         alt={char.name}
       />

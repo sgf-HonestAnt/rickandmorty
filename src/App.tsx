@@ -16,8 +16,8 @@ export default function App() {
   React.useEffect(() => {}, []);
   return (
     <div className='bg-gray-100 dark:bg-gray-800 min-h-screen p-4 font-mono leading-tight'>
-      <div className='container mx-auto w-4/5 my-10'>
-        <Button variant='contained'>Hello World</Button>
+      <div className='container mx-auto w-full lg:w-4/5 xl:w-3/5 my-10'>
+        {/* <Button variant='contained'>Hello World</Button> */}
         <Outlet />
       </div>
     </div>
