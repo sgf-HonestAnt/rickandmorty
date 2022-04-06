@@ -1,7 +1,9 @@
-import * as React from "react";
-// import { useParams } from "react-router-dom";
-import Characters from "./components/characters"
-import Locations from "./components/locations"
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  //Link,
+  Outlet,
+} from "react-router-dom";
 
 /**
  * @challenge - Find and solve any bugs you find in the project
@@ -11,14 +13,11 @@ import Locations from "./components/locations"
  */
 
 export default function App() {
-  // const { name } = useParams();
   React.useEffect(() => {}, []);
   return (
     <div className='bg-gray-100 dark:bg-gray-800 min-h-screen p-4 font-mono leading-tight'>
       <div className='container mx-auto w-4/5 my-10'>
-        {/* <p className='text-gray-400'>Rick and Morty</p> */}
-        <Characters />
-        <Locations />
+        <Outlet />
       </div>
     </div>
   );
