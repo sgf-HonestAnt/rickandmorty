@@ -1,5 +1,5 @@
 import React from "react";
-import {GrPrevious, GrNext} from "react-icons/gr"
+import { GrPrevious, GrNext } from "react-icons/gr";
 
 export default function Pagination(props: { page: number; setPage: any }) {
   const { page, setPage } = props;
@@ -10,14 +10,14 @@ export default function Pagination(props: { page: number; setPage: any }) {
         onClick={() => {
           page > 1 && setPage(page - 1);
         }}>
-        <GrPrevious />
+        <GrPrevious className='inline' />
       </span>{" "}
-      | {page} |{" "}
+      {page}{" "}
       <span
         onClick={() => {
           setPage(page + 1);
         }}>
-        <GrNext />
+        <GrNext className='inline' />
       </span>{" "}
     </div>
   );
