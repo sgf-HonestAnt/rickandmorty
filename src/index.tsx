@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Title from "./components/Title";
 import CharactersPage from "./components/CharactersPage";
 import LocationsPage from "./components/LocationsPage";
 import "./styles.css";
@@ -12,6 +13,7 @@ import "./styles.css";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Title />
       <Routes>
         <Route path='/' element={<App />}>
           {/* Render characters at "/" and "/characters" */}

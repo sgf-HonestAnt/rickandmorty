@@ -1,5 +1,16 @@
+import styled from "@emotion/styled";
 import React from "react";
 import { Link } from "react-router-dom";
+
+const Div = styled.div`
+  background: ${(props: { isMorty?: boolean }) =>
+    props.isMorty ? "green" : "red"};
+  max-height: 35px;
+`;
+
+const Face = styled.div`
+  margin: auto;
+`;
 
 export default function CharacterCard(props: { char: any }) {
   const { char } = props;
@@ -11,12 +22,20 @@ export default function CharacterCard(props: { char: any }) {
         alt={char.name}
       />
       <div className='flex flex-col justify-between p-4 leading-normal'>
-        <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+        <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex'>
           <Link to={`/characters/${char.name}`}>{char.name}</Link>
+          {char.name.includes("Morty") ? (
+            <Div className='ml-3' isMorty>
+              <Face>😃</Face>
+            </Div>
+          ) : (
+            <Div className='ml-3'>
+              <Face>😞</Face>
+            </Div>
+          )}
         </h5>
         <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
-          Status: {char.status} | Species:{" "}
-          {char.species} | Gender:{" "}
+          Status: {char.status} | Species: {char.species} | Gender:{" "}
           {char.gender} | Origin:{" "}
           {char.origin.id ? (
             <Link to={`/locations/${char.origin.name}`}>

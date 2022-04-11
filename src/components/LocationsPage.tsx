@@ -68,7 +68,7 @@ export default function LocationsPage() {
   }, [locationName]);
   console.log(location);
   return loading ? (
-    <Loading />
+    <Loading location={locationName} />
   ) : (
     <>
       <div>
